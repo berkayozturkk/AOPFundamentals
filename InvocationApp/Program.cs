@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Castle.DynamicProxy;
+using Entities;
+using InvocationApp.Aspect;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +13,12 @@ namespace InvocationApp
     {
         static void Main(string[] args)
         {
+            var proxy = new ProxyGenerator();
+            var aspect = proxy.CreateClassProxy<Employee>(new InterceptionAspect());
+
+            aspect.Add(1, "TestName", "TestLastName");
+
+            Console.ReadLine();
         }
     }
 }
