@@ -13,18 +13,14 @@ namespace Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        
         public virtual void Add(int id,string firstName,string lastName)
         {
-            //Console.WriteLine("Method body start");
-
-            //Console.WriteLine($"\t Id : {id}");
-            //Console.WriteLine($"\t firstName : {firstName}");
-            //Console.WriteLine($"\t lastName : {lastName}");
-
-            //Console.WriteLine("Method body end");
             Console.WriteLine("Added.");
+        }
 
+        public virtual void Update(int id, string firstName, string lastName)
+        {
+            Console.WriteLine("Updated.");
         }
     }
 }

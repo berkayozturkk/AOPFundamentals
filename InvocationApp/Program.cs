@@ -14,9 +14,18 @@ namespace InvocationApp
         static void Main(string[] args)
         {
             var proxy = new ProxyGenerator();
-            var aspect = proxy.CreateClassProxy<Employee>(new InterceptionAspect());
+            var aspect = proxy.CreateClassProxy<Employee>(
+                new DefensiveProgramingAspect(),
+                new InterceptionAspect());
 
-            aspect.Add(1, "TestName", "TestLastName");
+            var emp1 = new Employee
+            {
+                Id = 1,
+                FirstName = "TestFirstName",
+                LastName = "TestLastName"
+            };
+
+            aspect.Add(emp1.Id, emp1.FirstName, emp1.LastName);
 
             Console.ReadLine();
         }

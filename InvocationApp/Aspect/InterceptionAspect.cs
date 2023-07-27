@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InvocationApp.Aspect
 {
-    internal class InterceptionAspect : IInterceptor
+    public class InterceptionAspect : IInterceptor
     {
         public void Intercept(IInvocation invocation)
         {
