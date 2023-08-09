@@ -2,8 +2,13 @@
 
 namespace CastleDynamicProxyFirstApp
 {
+    public interface IMyClass
+    {
+        void MyMethod();
+    }
+
     [MyInterceptorAspect]
-    public class MyClass
+    public class MyClass : IMyClass
     {
         public virtual void MyMethod()
         {

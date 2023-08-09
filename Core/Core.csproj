@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interceptors\AspectInterceptorSelector.cs" />
     <Compile Include="Interceptors\MethodInterception.cs" />
     <Compile Include="Interceptors\MethodInterceptionBaseAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
