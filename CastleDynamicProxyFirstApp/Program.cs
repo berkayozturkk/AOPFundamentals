@@ -26,7 +26,7 @@ namespace CastleDynamicProxyFirstApp
 
             var builder = new ContainerBuilder();
             builder.RegisterType<MyClass>()
-                .As<MyClass>()
+                .As<IMyClass>()
                 .EnableInterfaceInterceptors(new ProxyGenerationOptions()
                 {
                     Selector = new AspectInterceptorSelector()
@@ -34,7 +34,7 @@ namespace CastleDynamicProxyFirstApp
                 .InstancePerDependency();
 
             var container = builder.Build();
-            var willBeIntercepted = container.Resolve<MyClass>();
+            var willBeIntercepted = container.Resolve<IMyClass>();
             willBeIntercepted.MyMethod();
 
             Console.ReadLine();
