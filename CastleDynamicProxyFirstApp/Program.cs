@@ -31,7 +31,11 @@ namespace CastleDynamicProxyFirstApp
                 {
                     Selector = new AspectInterceptorSelector()
                 })
-                .SingleInstance();
+                .InstancePerDependency();
+
+            var container = builder.Build();
+            var willBeIntercepted = container.Resolve<MyClass>();
+            willBeIntercepted.MyMethod();
 
             Console.ReadLine();
         }
